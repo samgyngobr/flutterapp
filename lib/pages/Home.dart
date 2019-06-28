@@ -17,15 +17,30 @@ class _HomeState extends State<Home> {
 
 
   final cardA = Card(
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0.0)),
-    elevation: 6,
+    shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(15.0) ),
+    elevation: 3,
+    color: Colors.blue,
     child: Container(
       child: Column(
         children: <Widget>[
 
           const ListTile(
-            title: Text('The Enchanted Nightingale'),
-            subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
+            contentPadding: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
+            title: Text(
+              'The Enchanted Nightingale',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            subtitle: Text(
+              'Music by Julie Gable. Lyrics by Sidney Stein.',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+              ),
+            ),
           ),
 
         ]
@@ -52,6 +67,61 @@ class _HomeState extends State<Home> {
   );
 
 
+  final cardC = Container(
+    decoration: BoxDecoration(
+      color: Colors.blue,
+      borderRadius: BorderRadius.circular(8.0),
+    ),
+    child: Row(
+      children: <Widget>[
+
+        Expanded(
+          child: Container(
+            padding: const EdgeInsets.all(15.0),
+            child: new Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                new Text(
+                  "Title",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  )
+                ),
+                new Text(
+                  "Subtitle?",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                  )
+                ),
+              ],
+            )
+          ),
+        ),
+
+        Container(
+            padding: const EdgeInsets.all(15.0),
+            child: new Column(
+              children: <Widget>[
+                new Text(
+                  "1",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  )
+                ),
+              ],
+            )
+        ),
+
+      ],
+    ),
+  );
+
+
   @override
   Widget build(BuildContext context)
   {
@@ -68,6 +138,8 @@ class _HomeState extends State<Home> {
               cardA,
               SizedBox(height: 15.0),
               cardB,
+              SizedBox(height: 15.0),
+              cardC,
               SizedBox(height: 15.0),
 
             ]
