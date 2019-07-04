@@ -34,37 +34,34 @@ class DrawerMenu extends StatelessWidget {
             title: Text('Home'),
             onTap: () {
 
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Home()),
-              );
+              Navigator.push( context, MaterialPageRoute( builder: (context) => Home() ) );
 
             },
           ),
+
+          Divider(),
 
           ListTile(
             title: Text('Leads'),
             onTap: () {
 
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Leads()),
-              );
+              Navigator.push( context, MaterialPageRoute( builder: (context) => Leads() ) );
 
             },
           ),
+
+          Divider(),
 
           ListTile(
             title: Text('Login'),
             onTap: () {
 
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => LoginPage()),
-              );
+              Navigator.push( context, MaterialPageRoute( builder: (context) => LoginPage() ) );
 
             },
           ),
+
+          Divider(),
 
         ],
       ),
