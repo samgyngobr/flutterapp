@@ -45,10 +45,19 @@ class _LeadsState extends State<Leads> {
         },
       ),
 
-      drawer: DrawerMenu()
+      drawer: DrawerMenu(),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          print('new');
+        },
+        tooltip: 'Novo',
+        child: Icon(Icons.add),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
 
     );
   }
+
 }
 
 

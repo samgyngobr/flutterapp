@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../pages/Home.dart';
+//import '../pages/Home.dart';
 
 
 class LoginPage extends StatefulWidget {
@@ -13,33 +13,43 @@ class LoginPage extends StatefulWidget {
 }
 
 
-
+// https://flutter.dev/docs/cookbook/forms/validation
 class _LoginPageState extends State<LoginPage> {
 
-  TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
 
-
-    final emailField = TextField(
-      style: style,
+    final emailField = TextFormField(
       decoration: InputDecoration(
         contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         hintText: "E-mail",
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))
       ),
+      validator: (value) {
+        if (value.isEmpty)
+        {
+          return 'Campo Obrigatorio!';
+        }
+        return null;
+      }
     );
 
 
-    final passwordField = TextField(
+    final passwordField = TextFormField(
       obscureText: true,
-      style: style,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         hintText: "Senha",
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))
       ),
+      validator: (value) {
+        if (value.isEmpty) {
+          return 'Campo Obrigatorio!';
+        }
+        return null;
+      }
     );
 
 
@@ -52,18 +62,25 @@ class _LoginPageState extends State<LoginPage> {
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {
 
+          if (_formKey.currentState.validate())
+          {
+            Scaffold.of(context).showSnackBar(SnackBar(content: Text('Processing Data')));
+          }
+
+          /*
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => Home()),
           );
+          */
 
         },
         child: Text(
           "LOGIN",
           textAlign: TextAlign.center,
-          style: style.copyWith(
+          style: TextStyle(
             color: Colors.white,
-            fontWeight: FontWeight.bold
+            fontWeight: FontWeight.bold,
           )
         ),
       ),
@@ -72,22 +89,25 @@ class _LoginPageState extends State<LoginPage> {
 
     final cardForm = Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0.0)),
-      elevation: 6,
+      elevation: 4,
       child: Container(
         child: Padding(
           padding: const EdgeInsets.all(36.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              SizedBox(height: 15.0),
-              emailField,
-              SizedBox(height: 35.0),
-              passwordField,
-              SizedBox(height: 35.0),
-              loginButon,
-              SizedBox(height: 15.0),
-            ]
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                SizedBox(height: 15.0),
+                emailField,
+                SizedBox(height: 35.0),
+                passwordField,
+                SizedBox(height: 35.0),
+                loginButon,
+                SizedBox(height: 15.0),
+              ]
+            )
           )
         )
       ),
@@ -96,6 +116,7 @@ class _LoginPageState extends State<LoginPage> {
 
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints viewportConstraints) {
+
         return SingleChildScrollView(
           child: ConstrainedBox(
 
@@ -141,6 +162,7 @@ class _LoginPageState extends State<LoginPage> {
 
           ),
         );
+
       },
     );
   }
