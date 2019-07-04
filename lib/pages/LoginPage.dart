@@ -71,6 +71,7 @@ class _LoginPageState extends State<LoginPage> {
           }
 
         },
+
         child: Text(
           "LOGIN",
           textAlign: TextAlign.center,
@@ -79,6 +80,7 @@ class _LoginPageState extends State<LoginPage> {
             fontWeight: FontWeight.bold,
           )
         ),
+
       ),
     );
 

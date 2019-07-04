@@ -39,7 +39,7 @@ class DrawerMenu extends StatelessWidget {
             },
           ),
 
-          Divider(),
+          Divider( height: 2.0 ),
 
           ListTile(
             title: Text('Leads'),
@@ -50,7 +50,7 @@ class DrawerMenu extends StatelessWidget {
             },
           ),
 
-          Divider(),
+          Divider( height: 2.0 ),
 
           ListTile(
             title: Text('Login'),
@@ -61,7 +61,7 @@ class DrawerMenu extends StatelessWidget {
             },
           ),
 
-          Divider(),
+          Divider( height: 2.0 ),
 
         ],
       ),
