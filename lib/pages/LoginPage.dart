@@ -54,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
 
 
     final loginButon = Material(
-      elevation: 5.0,
+      elevation: 4,
       borderRadius: BorderRadius.circular(30.0),
       color: Color.fromRGBO(89, 130, 196, 1),
       child: MaterialButton(
@@ -62,17 +62,13 @@ class _LoginPageState extends State<LoginPage> {
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {
 
-          if (_formKey.currentState.validate())
-          {
-            Scaffold.of(context).showSnackBar(SnackBar(content: Text('Processing Data')));
-          }
+          FocusScope.of(context).requestFocus(new FocusNode());
 
-          /*
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Home()),
-          );
-          */
+          if (_formKey.currentState.validate() == true)
+          {
+            print('ok');
+            //Scaffold.of(context).showSnackBar(SnackBar(content: Text('Processing Data')));
+          }
 
         },
         child: Text(
@@ -117,50 +113,55 @@ class _LoginPageState extends State<LoginPage> {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints viewportConstraints) {
 
-        return SingleChildScrollView(
-          child: ConstrainedBox(
+        return GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTap: () {
+            FocusScope.of(context).requestFocus(new FocusNode());
+          },
+          child:  SingleChildScrollView(
+            child: ConstrainedBox(
 
-            constraints: BoxConstraints(
-              minHeight: viewportConstraints.maxHeight,
-            ),
-
-            child: IntrinsicHeight(
-              child: Container(
-                //color: Color.fromRGBO(89, 130, 196, 1),
-
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    colors: [
-                      Color.fromRGBO(117, 116, 182, 1),
-                      Color.fromRGBO(30, 159, 224, 1)
-                    ]
-                  )
-                ),
-
-                child: Padding(
-                  padding: const EdgeInsets.all(50.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-
-                      SizedBox(
-                        height: 155.0,
-                        child: Image.asset("assets/android.png"),
-                      ),
-
-                      cardForm,
-
-                    ],
-                  ),
-                ),
-
+              constraints: BoxConstraints(
+                minHeight: viewportConstraints.maxHeight,
               ),
-            ),
 
-          ),
+              child: IntrinsicHeight(
+                child: Container(
+
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topRight,
+                      end: Alignment.bottomLeft,
+                      colors: [
+                        Color.fromRGBO(117, 116, 182, 1),
+                        Color.fromRGBO(30, 159, 224, 1)
+                      ]
+                    )
+                  ),
+
+                  child: Padding(
+                    padding: const EdgeInsets.all(50.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+
+                        SizedBox(
+                          height: 155.0,
+                          child: Image.asset("assets/android.png"),
+                        ),
+
+                        cardForm,
+
+                      ],
+                    ),
+                  ),
+
+                ),
+              ),
+
+            ),
+          )
         );
 
       },
