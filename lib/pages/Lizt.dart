@@ -69,26 +69,27 @@ class _LiztState extends State<Lizt> {
       appBar: AppBar( title: Text("Listagem") ),
 
       body: ListView.separated(
+
         itemCount: _listViewData.length,
         separatorBuilder: (context, index) => Divider(height: 1.0, color: Colors.grey),
         itemBuilder: (context, index) {
 
           return ExpansionTile(
-            title: Text(_listViewData[index]['title']),
+            title: Text( _listViewData[index]['title'] ),
             children: <Widget>[
-              ListTile( title: Text(_listViewData[index]['content'] ) ),
-              Row(
-                children: <Widget>[
-                  RaisedButton(
-                    onPressed: () { },
-                    child: Text( 'Detalhes' )
-                  )
-                ],
+
+              ListTile( title: Text( _listViewData[index]['content'] ) ),
+
+              RaisedButton(
+                child: Text( 'Detalhes' ),
+                onPressed: () { }
               )
+
             ]
           );
 
         },
+
       ),
 
       drawer: DrawerMenu(),
