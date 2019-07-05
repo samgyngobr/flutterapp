@@ -13,7 +13,6 @@ class Lizt extends StatefulWidget
 
 class _LiztState extends State<Lizt> {
 
-
   final List<Map<String, dynamic>> _listViewData = [
     {
       "title": "Titulo A",

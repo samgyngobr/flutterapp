@@ -13,17 +13,31 @@ class Leads extends StatefulWidget
 
 class _LeadsState extends State<Leads> {
 
-
-  final List<String> _listViewData = [
-    "Inducesmile.com",
-    "Flutter Dev",
-    "Android Dev",
-    "iOS Dev!",
-    "React Native Dev!",
-    "React Dev!",
-    "express Dev!",
-    "Laravel Dev!",
-    "Angular Dev!",
+  final List<Map<String, dynamic>> _listViewData = [
+    {
+      "title"  : "Titulo A",
+      "content": "Conteudo A",
+      "status" : "Atendimento",
+      "date"   : "12/04/2017"
+    },
+    {
+      "title"  : "Titulo B",
+      "content": "Conteudo B",
+      "status" : "Atendimento",
+      "date"   : "12/04/2017"
+    },
+    {
+      "title"  : "Titulo C",
+      "content": "Conteudo C",
+      "status" : "Atendimento",
+      "date"   : "12/04/2017"
+    },
+    {
+      "title"  : "Titulo D",
+      "content": "Conteudo D",
+      "status" : "Atendimento",
+      "date"   : "12/04/2017"
+    },
   ];
 
   @override
@@ -38,8 +52,43 @@ class _LeadsState extends State<Leads> {
         separatorBuilder: (context, index) => Divider(height: 1.0, color: Colors.grey),
         itemBuilder: (context, index) {
 
+          /*
           return ListTile(
-            title: Text(_listViewData[index]),
+            title: Text( _listViewData[index]['title'] ),
+            subtitle: Text( _listViewData[index]['content'] ),
+            leading: Icon( Icons.whatshot, color: Colors.red, size: 40.0, ),
+            trailing: Icon( Icons.arrow_right, size: 40.0 ),
+          );
+          */
+
+          return Container(
+            padding: const EdgeInsets.all(12.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+
+                    Text( _listViewData[index]['title']  , style: TextStyle( fontSize: 18 ) ),
+                    Text( _listViewData[index]['content'], style: TextStyle( fontSize: 14 ) ),
+
+                  ],
+                ),
+
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+
+                    Text( _listViewData[index]['status'], style: TextStyle( fontSize: 14 ) ),
+                    Text( _listViewData[index]['date']  , style: TextStyle( fontSize: 14 ) ),
+
+                  ],
+                ),
+
+              ],
+            )
           );
 
         },

@@ -78,10 +78,10 @@ class _HomeState extends State<Home> {
         Expanded(
           child: Container(
             padding: const EdgeInsets.all(15.0),
-            child: new Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                new Text(
+                Text(
                   "Title",
                   style: TextStyle(
                     color: Colors.white,
@@ -89,7 +89,7 @@ class _HomeState extends State<Home> {
                     fontWeight: FontWeight.bold,
                   )
                 ),
-                new Text(
+                Text(
                   "Subtitle?",
                   style: TextStyle(
                     color: Colors.white,
@@ -103,9 +103,9 @@ class _HomeState extends State<Home> {
 
         Container(
             padding: const EdgeInsets.all(15.0),
-            child: new Column(
+            child: Column(
               children: <Widget>[
-                new Text(
+                Text(
                   "1",
                   style: TextStyle(
                     color: Colors.white,
