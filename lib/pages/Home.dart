@@ -26,21 +26,8 @@ class _HomeState extends State<Home> {
 
           const ListTile(
             contentPadding: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 10.0),
-            title: Text(
-              'The Enchanted Nightingale',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            subtitle: Text(
-              'Music by Julie Gable. Lyrics by Sidney Stein.',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-              ),
-            ),
+            title: Text( 'The Enchanted Nightingale', style: TextStyle( color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold ) ),
+            subtitle: Text( 'Music by Julie Gable. Lyrics by Sidney Stein.', style: TextStyle( color: Colors.white, fontSize: 18 ) ),
           ),
 
         ]
@@ -68,10 +55,12 @@ class _HomeState extends State<Home> {
 
 
   final cardC = Container(
+
     decoration: BoxDecoration(
       color: Colors.blue,
       borderRadius: BorderRadius.circular(8.0),
     ),
+
     child: Row(
       children: <Widget>[
 
@@ -81,21 +70,10 @@ class _HomeState extends State<Home> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(
-                  "Title",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  )
-                ),
-                Text(
-                  "Subtitle?",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                  )
-                ),
+
+                Text( "Title", style: TextStyle( color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold ) ),
+                Text( "Subtitle?", style: TextStyle( color: Colors.white, fontSize: 18 ) ),
+
               ],
             )
           ),
@@ -105,14 +83,9 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.all(15.0),
             child: Column(
               children: <Widget>[
-                Text(
-                  "1",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  )
-                ),
+
+                Text( "1", style: TextStyle( color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold ) ),
+
               ],
             )
         ),

@@ -75,10 +75,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Text(
           "LOGIN",
           textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          )
+          style: TextStyle( color: Colors.white, fontWeight: FontWeight.bold )
         ),
 
       ),
@@ -123,9 +120,7 @@ class _LoginPageState extends State<LoginPage> {
           child:  SingleChildScrollView(
             child: ConstrainedBox(
 
-              constraints: BoxConstraints(
-                minHeight: viewportConstraints.maxHeight,
-              ),
+              constraints: BoxConstraints( minHeight: viewportConstraints.maxHeight ),
 
               child: IntrinsicHeight(
                 child: Container(
@@ -134,10 +129,7 @@ class _LoginPageState extends State<LoginPage> {
                     gradient: LinearGradient(
                       begin: Alignment.topRight,
                       end: Alignment.bottomLeft,
-                      colors: [
-                        Color.fromRGBO(117, 116, 182, 1),
-                        Color.fromRGBO(30, 159, 224, 1)
-                      ]
+                      colors: [ Color.fromRGBO(117, 116, 182, 1), Color.fromRGBO(30, 159, 224, 1) ]
                     )
                   ),
 
@@ -148,10 +140,7 @@ class _LoginPageState extends State<LoginPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
 
-                        SizedBox(
-                          height: 155.0,
-                          child: Image.asset("assets/android.png"),
-                        ),
+                        SizedBox( height: 155.0, child: Image.asset("assets/android.png") ),
 
                         cardForm,
 
