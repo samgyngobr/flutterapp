@@ -71,8 +71,19 @@ class _LeadsState extends State<Leads> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
 
-                    Text( _listViewData[index]['title']  , style: TextStyle( fontSize: 18 ) ),
-                    Text( _listViewData[index]['content'], style: TextStyle( fontSize: 14 ) ),
+                    Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Text( _listViewData[index]['title'], style: TextStyle( fontSize: 18 ) ),
+                      ),
+                    ),
+
+                    Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Text( _listViewData[index]['content'], style: TextStyle( fontSize: 14 ) ),
+                      ),
+                    ),
 
                   ],
                 ),
@@ -81,8 +92,19 @@ class _LeadsState extends State<Leads> {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
 
-                    Text( _listViewData[index]['status'], style: TextStyle( fontSize: 14 ) ),
-                    Text( _listViewData[index]['date']  , style: TextStyle( fontSize: 14 ) ),
+                    Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Text( _listViewData[index]['status'], style: TextStyle( fontSize: 14 ) ),
+                      ),
+                    ),
+
+                    Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Text( _listViewData[index]['date'], style: TextStyle( fontSize: 14 ) ),
+                      ),
+                    ),
 
                   ],
                 ),
