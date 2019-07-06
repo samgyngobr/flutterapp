@@ -70,22 +70,36 @@ class _LeadsState extends State<Leads> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-
                     Container(
                       child: Padding(
                         padding: const EdgeInsets.all(4.0),
-                        child: Text( _listViewData[index]['title'], style: TextStyle( fontSize: 18 ) ),
+                        child: Icon( Icons.whatshot, color: Colors.red, size: 40.0 )
                       ),
-                    ),
+                    )
+                  ]
+                ),
 
-                    Container(
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: Text( _listViewData[index]['content'], style: TextStyle( fontSize: 14 ) ),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+
+                      Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: Text( _listViewData[index]['title'], style: TextStyle( fontSize: 18 ) ),
+                        ),
                       ),
-                    ),
 
-                  ],
+                      Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: Text( _listViewData[index]['content'], style: TextStyle( fontSize: 14 ) ),
+                        ),
+                      ),
+
+                    ],
+                  ),
                 ),
 
                 Column(

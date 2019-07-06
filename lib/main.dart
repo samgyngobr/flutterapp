@@ -11,14 +11,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'FlutterApp',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-
-      home: Home(title: 'FlutterApp Login'),
-
+      theme: ThemeData( primarySwatch: Colors.blue ),
+      home: Home( title: 'FlutterApp Login' ),
     );
   }
+
 }
 
 
