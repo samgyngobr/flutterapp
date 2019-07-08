@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//import '../pages/Home.dart';
+import '../models/LoginModel.dart';
 
 
 class LoginPage extends StatefulWidget {
@@ -18,10 +18,14 @@ class _LoginPageState extends State<LoginPage> {
 
   final _formKey = GlobalKey<FormState>();
 
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _senhaController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
 
     final emailField = TextFormField(
+      controller: _emailController,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         hintText: "E-mail",
@@ -39,6 +43,7 @@ class _LoginPageState extends State<LoginPage> {
 
     final passwordField = TextFormField(
       obscureText: true,
+      controller: _senhaController,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         hintText: "Senha",
@@ -66,8 +71,7 @@ class _LoginPageState extends State<LoginPage> {
 
           if (_formKey.currentState.validate() == true)
           {
-            print('ok');
-            //Scaffold.of(context).showSnackBar(SnackBar(content: Text('Processing Data')));
+            LoginModel(_emailController.text,_senhaController.text);
           }
 
         },
