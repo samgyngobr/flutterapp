@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../components/DrawerMenu.dart';
+import './Details.dart';
 
 class Leads extends StatefulWidget
 {
@@ -61,71 +62,81 @@ class _LeadsState extends State<Leads> {
           );
           */
 
-          return Container(
-            padding: const EdgeInsets.all(12.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
+          return GestureDetector(
+            onTap: () {
 
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Container(
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: Icon( Icons.whatshot, color: Colors.red, size: 40.0 )
-                      ),
-                    )
-                  ]
-                ),
+              Navigator.push( context, MaterialPageRoute( builder: (context) => Details() ) );
 
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-
-                      Container(
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: Text( _listViewData[index]['title'], style: TextStyle( fontSize: 18 ) ),
-                        ),
-                      ),
-
-                      Container(
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: Text( _listViewData[index]['content'], style: TextStyle( fontSize: 14 ) ),
-                        ),
-                      ),
-
-                    ],
-                  ),
-                ),
-
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
+            },
+            child: Container(
+                padding: const EdgeInsets.all(12.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
 
-                    Container(
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: Text( _listViewData[index]['status'], style: TextStyle( fontSize: 14 ) ),
+                    Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Container(
+                            child: Padding(
+                                padding: const EdgeInsets.all(4.0),
+                                child: Icon( Icons.whatshot, color: Colors.red, size: 40.0 )
+                            ),
+                          )
+                        ]
+                    ),
+
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+
+                          Container(
+                            child: Padding(
+                              padding: const EdgeInsets.all(4.0),
+                              child: Text( _listViewData[index]['title'], style: TextStyle( fontSize: 18 ) ),
+                            ),
+                          ),
+
+                          Container(
+                            child: Padding(
+                              padding: const EdgeInsets.all(4.0),
+                              child: Text( _listViewData[index]['content'], style: TextStyle( fontSize: 14 ) ),
+                            ),
+                          ),
+
+                        ],
                       ),
                     ),
 
-                    Container(
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: Text( _listViewData[index]['date'], style: TextStyle( fontSize: 14 ) ),
-                      ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: <Widget>[
+
+                        Container(
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Text( _listViewData[index]['status'], style: TextStyle( fontSize: 14 ) ),
+                          ),
+                        ),
+
+                        Container(
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Text( _listViewData[index]['date'], style: TextStyle( fontSize: 14 ) ),
+                          ),
+                        ),
+
+                      ],
                     ),
 
                   ],
-                ),
-
-              ],
+                )
             )
+
+
           );
+
 
         },
       ),

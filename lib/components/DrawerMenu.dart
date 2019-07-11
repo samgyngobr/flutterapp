@@ -62,7 +62,7 @@ class DrawerMenu extends StatelessWidget {
           Divider( height: 2.0 ),
 
           ListTile(
-            title: Text('Login'),
+            title: Text('Logout'),
             onTap: () {
 
               Navigator.push( context, MaterialPageRoute( builder: (context) => LoginPage() ) );
