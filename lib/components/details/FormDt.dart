@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import './form/FormA.dart';
+import './form/FormB.dart';
 
 class FormDt extends StatefulWidget
 {
@@ -17,9 +19,9 @@ class _FormDtState extends State<FormDt> {
   {
     switch ( val )
     {
-      case 'One'  : return Container( child: Text( 'One' ) );
-      case 'Two'  : return Container( child: Text( 'Two' ) );
-      case 'Tree' : return Container( child: Text( 'Tree' ) );
+      case 'One'  : return Container();
+      case 'Two'  : return FormA();
+      case 'Tree' : return FormB();
       case 'Four' : return Container( child: Text( 'Four' ) );
     }
   }
