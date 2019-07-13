@@ -12,21 +12,48 @@ class HistoryDt extends StatefulWidget
 
 class _HistoryDtState extends State<HistoryDt> {
 
-  @override
-  Widget build(BuildContext context)
-  {
-    return Container(
-        child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: ListTile(
-              title: Text( 'TItulo' ),
-              subtitle: Text( 'subtitulo' ),
-              leading: Icon( Icons.whatshot, color: Colors.red, size: 40.0, ),
-              trailing: Icon( Icons.arrow_right, size: 40.0 ),
-            )
-        )
-    );
 
+
+
+  final cardB = Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0.0)),
+      elevation: 6,
+      child: Container(
+          child: Column(
+              children: <Widget>[
+
+                const ListTile(
+                  title: Text('The Enchanted Nightingale 2'),
+                  subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein. 2'),
+                ),
+
+              ]
+          )
+      )
+  );
+
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: <Widget>[
+
+            cardB,
+            SizedBox(height: 15.0),
+            cardB,
+            SizedBox(height: 15.0),
+            cardB,
+            SizedBox(height: 15.0),
+
+          ]
+        ),
+      )
+    );
   }
 
 }
