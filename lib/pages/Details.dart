@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import '../components/details/FormDt.dart';
+import '../components/details/DetailsDt.dart';
+import '../components/details/InteractionsDt.dart';
+import '../components/details/HistoryDt.dart';
 
 class Details extends StatefulWidget
 {
@@ -16,23 +20,25 @@ class _DetailsState extends State<Details> {
   Widget build(BuildContext context)
   {
     return DefaultTabController(
-        length: 3,
+        length: 4,
         child: Scaffold(
           appBar: AppBar(
             bottom: TabBar(
               tabs: [
-                Tab(icon: Icon(Icons.directions_car)),
-                Tab(icon: Icon(Icons.directions_transit)),
-                Tab(icon: Icon(Icons.directions_bike)),
+                Tab( text: 'Form' ),
+                Tab( text: 'Details' ),
+                Tab( text: 'Interactions' ),
+                Tab( text: 'History' ),
               ],
             ),
             title: Text('Details'),
           ),
           body: TabBarView(
             children: [
-              Icon(Icons.directions_car),
-              Icon(Icons.directions_transit),
-              Icon(Icons.directions_bike),
+              FormDt(),
+              DetailsDt(),
+              InteractionsDt(),
+              HistoryDt(),
             ],
           ),
         ),
