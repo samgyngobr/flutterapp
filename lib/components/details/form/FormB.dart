@@ -23,6 +23,10 @@ class _FormBState extends State<FormB> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           TextFormField(
+            decoration: const InputDecoration(
+              hintText: 'What do people call you?',
+              labelText: 'Name *',
+            ),
             validator: (value) {
               if (value.isEmpty) {
                 return '2 - Enter some text';
