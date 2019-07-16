@@ -1,6 +1,6 @@
-library app.globals;
+library flutter_app.globals;
 
-final url = {
+final Map<String, String> url = {
   'login' : '',
   'list'  : '',
 };
