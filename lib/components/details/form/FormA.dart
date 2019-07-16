@@ -28,10 +28,13 @@ class _FormAState extends State<FormA> {
               labelText: 'Name *',
             ),
             validator: (value) {
+
               if (value.isEmpty) {
                 return 'Enter some text';
               }
+
               return null;
+
             },
           ),
           Padding(
@@ -42,8 +45,7 @@ class _FormAState extends State<FormA> {
                 // otherwise.
                 if (_formKey.currentState.validate()) {
                   // If the form is valid, display a Snackbar.
-                  Scaffold.of(context)
-                      .showSnackBar(SnackBar(content: Text('Processing Data')));
+                  Scaffold.of(context).showSnackBar(SnackBar(content: Text('Processing Data')));
                 }
               },
               child: Text('Submit'),
