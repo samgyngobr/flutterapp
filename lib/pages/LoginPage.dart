@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import '../models/LoginModel.dart';
+import '../components/LoadingFA.dart';
 
 
 class LoginPage extends StatefulWidget {
@@ -17,6 +19,8 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
 
   final _formKey = GlobalKey<FormState>();
+
+  bool loading = false;
 
   TextEditingController _emailController = TextEditingController();
   TextEditingController _senhaController = TextEditingController();
@@ -71,6 +75,7 @@ class _LoginPageState extends State<LoginPage> {
 
           if (_formKey.currentState.validate() == true)
           {
+            loading = true;
             LoginModel(_emailController.text,_senhaController.text);
           }
 
@@ -146,6 +151,8 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox( height: 155.0, child: Image.asset("assets/android.png") ),
 
                         cardForm,
+
+                        ( loading ) ? LoadingFA() : Container(),
 
                       ],
                     ),
