@@ -76,7 +76,8 @@ class _LoginPageState extends State<LoginPage> {
           if (_formKey.currentState.validate() == true)
           {
             loading = true;
-            LoginModel(_emailController.text,_senhaController.text);
+            var log = new LoginModel();
+            Future<bool> resp = log.loga(_emailController.text,_senhaController.text);
           }
 
         },
