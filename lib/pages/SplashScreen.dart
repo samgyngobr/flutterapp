@@ -43,46 +43,46 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints viewportConstraints) {
-
         return SingleChildScrollView(
-              child: ConstrainedBox(
+          child: ConstrainedBox(
 
-                constraints: BoxConstraints( minHeight: viewportConstraints.maxHeight ),
+            constraints: BoxConstraints(minHeight: viewportConstraints.maxHeight),
 
-                child: IntrinsicHeight(
-                  child: Container(
+            child: IntrinsicHeight(
+              child: Container(
 
-                    decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                            begin: Alignment.topRight,
-                            end: Alignment.bottomLeft,
-                            colors: [ Color.fromRGBO(117, 116, 182, 1), Color.fromRGBO(30, 159, 224, 1) ]
-                        )
-                    ),
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        begin: Alignment.topRight,
+                        end: Alignment.bottomLeft,
+                        colors: [
+                          Color.fromRGBO(117, 116, 182, 1),
+                          Color.fromRGBO(30, 159, 224, 1)
+                        ]
+                    )
+                ),
 
-                    child: Padding(
-                      padding: const EdgeInsets.all(50.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
+                child: Padding(
+                  padding: const EdgeInsets.all(50.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
 
-                          SizedBox( height: 155.0, child: Image.asset("assets/android.png") ),
+                      SizedBox(height: 155.0, child: Image.asset("assets/android.png")),
 
-                        ],
-                      ),
-                    ),
-
+                    ],
                   ),
                 ),
 
               ),
+            ),
+
+          ),
 
         );
-
       },
     );
   }
