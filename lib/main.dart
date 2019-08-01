@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'pages/Home.dart';
+import 'pages/SplashScreen.dart';
 
 
 void main() => runApp(MyApp());
@@ -12,7 +14,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'FlutterApp',
       theme: ThemeData( primarySwatch: Colors.blue ),
-      home: Home( title: 'FlutterApp Login' ),
+      //home: Home( title: 'FlutterApp Login' ),
+      routes: <String, WidgetBuilder>{
+        'Home'         : ( BuildContext context ) => Home( title: 'FlutterApp Login' ),
+        'SplashScreen' : ( BuildContext context ) => SplashScreen(),
+      },
+      initialRoute: 'SplashScreen',
     );
   }
 
