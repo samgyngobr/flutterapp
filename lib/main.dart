@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'pages/Home.dart';
+//import 'pages/Home.dart';
 import 'pages/SplashScreen.dart';
 
 
@@ -14,12 +14,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'FlutterApp',
       theme: ThemeData( primarySwatch: Colors.blue ),
-      //home: Home( title: 'FlutterApp Login' ),
+      home : SplashScreen(),
+      /*
       routes: <String, WidgetBuilder>{
         'Home'         : ( BuildContext context ) => Home( title: 'FlutterApp Login' ),
         'SplashScreen' : ( BuildContext context ) => SplashScreen(),
       },
       initialRoute: 'SplashScreen',
+      */
     );
   }
 
