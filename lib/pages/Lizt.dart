@@ -5,7 +5,7 @@ class Lizt extends StatefulWidget
 {
   Lizt({Key key, this.title}) : super(key: key);
 
-  final String title;
+  String title = 'List';
 
   @override
   _LiztState createState() => _LiztState();

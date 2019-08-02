@@ -6,7 +6,7 @@ class Leads extends StatefulWidget
 {
   Leads({Key key, this.title}) : super(key: key);
 
-  final String title;
+  String title = 'Leads';
 
   @override
   _LeadsState createState() => _LeadsState();

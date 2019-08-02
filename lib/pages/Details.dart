@@ -8,7 +8,7 @@ class Details extends StatefulWidget
 {
   Details({Key key, this.title}) : super(key: key);
 
-  final String title;
+  String title = 'Details';
 
   @override
   _DetailsState createState() => _DetailsState();
