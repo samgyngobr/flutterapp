@@ -71,7 +71,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
 
-                      SizedBox(height: 155.0, child: Image.asset("assets/android.png")),
+                      SizedBox(height: 155.0, child: Image.asset("assets/flutter.png")),
 
                     ],
                   ),

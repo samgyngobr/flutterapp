@@ -42,6 +42,7 @@ flutter:
 
   assets:
     - assets/android.png
+    - assets/flutter.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

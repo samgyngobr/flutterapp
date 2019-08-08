@@ -78,6 +78,7 @@ class _LoginPageState extends State<LoginPage> {
             loading = true;
             var log = new LoginModel();
             Future<bool> resp = log.loga(_emailController.text,_senhaController.text);
+            print(resp);
           }
 
         },
@@ -149,7 +150,7 @@ class _LoginPageState extends State<LoginPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
 
-                        SizedBox( height: 155.0, child: Image.asset("assets/android.png") ),
+                        SizedBox( height: 155.0, child: Image.asset("assets/flutter.png") ),
 
                         cardForm,
 
